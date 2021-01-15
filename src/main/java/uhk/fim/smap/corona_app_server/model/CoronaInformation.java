@@ -1,10 +1,8 @@
 package uhk.fim.smap.corona_app_server.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -41,23 +39,8 @@ public class CoronaInformation {
     @Column(name="corona_information_death_number")
     private int numberOfDeath;
 
-    /*@OneToMany(mappedBy = "coronaInformation")
-    private List<ActualNumberOfCases> actualNumberOfCases;
-
-    @OneToMany(mappedBy = "coronaInformation")
-    private List<PredictedNumberOfCases> predictedNumberOfCases;*/
-
     public CoronaInformation() {
     }
-
-   /* public CoronaInformation(Long id, String regionCode, String regionName, String lastDate, List<ActualNumberOfCases> actualNumberOfCases, List<PredictedNumberOfCases> predictedNumberOfCases) {
-        this.id = id;
-        this.regionCode = regionCode;
-        this.regionName = regionName;
-        this.lastDate = lastDate;
-        this.actualNumberOfCases = actualNumberOfCases;
-        this.predictedNumberOfCases = predictedNumberOfCases;
-    }*/
 
     public CoronaInformation(Long id, String regionCode, String regionName, String lastDate, List<Integer> actualNumberOfCases, List<Double> futureNumberOfCases, int numberOfDeath, int numberOfCured) {
         this.id = id;
@@ -146,14 +129,6 @@ public class CoronaInformation {
         this.numberOfDeath = numberOfDeath;
     }
 
-    /*public void setActualNumberOfCases(List<ActualNumberOfCases> actualNumberOfCases) {
-        this.actualNumberOfCases = actualNumberOfCases;
-    }*/
-
-    /*public void setPredictedNumberOfCases(List<PredictedNumberOfCases> predictedNumberOfCases) {
-        this.predictedNumberOfCases = predictedNumberOfCases;
-    }*/
-
     public void setActualNumberOfCases(List<Integer> actualNumberOfCases) {
         this.actualNumberOfCases = actualNumberOfCases;
     }
@@ -177,14 +152,6 @@ public class CoronaInformation {
     public String getRegionName() {
         return regionName;
     }
-
-    /*public List<ActualNumberOfCases> getActualNumberOfCases() {
-        return actualNumberOfCases;
-    }
-
-    public List<PredictedNumberOfCases> getPredictedNumberOfCases() {
-        return predictedNumberOfCases;
-    }*/
 
     public String getLastDate() {
         return lastDate;

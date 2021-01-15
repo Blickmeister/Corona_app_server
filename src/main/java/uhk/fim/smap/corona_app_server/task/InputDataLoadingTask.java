@@ -36,7 +36,7 @@ public class InputDataLoadingTask {
 
     // každý den v 1:20 a 1:40 se stáhnou aktuální data z MZCR
     //@Scheduled(cron = "0 20,40 1 * * *")
-    @Scheduled(fixedDelay = 5000)
+    @Scheduled(fixedDelay = 400000) // pro testování
     public void downloadData() throws IOException {
         // stáhnutí
         CustomWebClientService customWebClientService = new CustomWebClientService(WebClient.builder());
